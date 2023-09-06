@@ -222,7 +222,7 @@
 
                 <div class="col-lg-6">
                     <!-- form fields -->
-                    <form>
+                    <form onsubmit="sendemail(); reset();return false;">
                         <input type="text" class="form-control form-control-lg" placeholder="Name">
                         <input type="email" class="form-control mt-3" placeholder="Email">
                         <input type="text" class="form-control mt-3" placeholder="Subject">
@@ -253,6 +253,23 @@
 
     <!-- load javascript after loading all html content -->
     <script src="script/script.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>function
+    sendemail(){
+        Email.send({
+    Host : "smtp.gmail.com",
+    Username : "varunveeramalla20@gmail.com",
+    Password : "8DRTZ!.7g8Lrht.",
+    To : 'varunveeramalla20@gmail.com',
+    From : doc.getElementById("email").value,
+    Subject : "Enquiry",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+    
+    
+    </script>
 
 </body>
 
